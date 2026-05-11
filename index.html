@@ -209,13 +209,16 @@ nav{
 .photobreak{
   padding:0;
   background:var(--beige);
-  display:grid;grid-template-columns:1fr 1fr;
+  display:grid;grid-template-columns:1fr;
   align-items:stretch;
-  min-height:520px;
+  min-height:auto;
 }
 .pb-text{
-  padding:80px 56px 80px 72px;
+  padding:80px 72px;
   display:flex;flex-direction:column;justify-content:center;
+  max-width:960px;
+  margin:0 auto;
+  text-align:center;
 }
 .pb-text h2{font-family:'Playfair Display',serif;font-size:clamp(24px,2.6vw,38px);font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:16px;}
 .pb-text p{font-size:15px;color:var(--gray);line-height:1.85;font-weight:300;margin-bottom:24px;}
@@ -514,9 +517,6 @@ footer{background:var(--cream);padding:44px 72px 26px;border-top:1px solid rgba(
     <h2>Justiça com empatia e <em>seriedade</em></h2>
     <p>Entendemos que o divórcio é um momento de transição delicado. Por isso, nosso trabalho vai além do jurídico: oferecemos o suporte necessário para que você se sinta segura e amparada durante todo o caminho.</p>
     <a href="https://wa.me/5531982629434" target="_blank" class="btn-gold">Agendar Consulta</a>
-  </div>
-  <div class="pb-img-col">
-    <img src="assets/ana-malheiros-about-marrom.png" alt="Atendimento Dra. Ana" class="pb-img">
   </div>
 </section>
 
