@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana Malheiros Advocacia – Especialista em Divórcio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+:root{
+  --gold:#B8922A;
+  --gold2:#D4AE5A;
+  --pale:#F5EDD8;
+  --cream:#F8F4EE;
+  --beige:#F2EBE0;
+  --sand:#FAF5EA;
+  --white:#FFFFFF;
+  --dark:#2C2A25;
+  --gray:#6B6860;
+  --wa:#25D366;
+  --wa-dark:#128C7E;
+}
+
+body{font-family:'Lato',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(184,146,42,0.18);
+  padding:10px 56px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-brand-text{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--dark);line-height:1.15;}
+.nav-brand-text small{display:block;font-family:'Lato',sans-serif;font-size:9px;font-weight:300;letter-spacing:3.5px;color:var(--gold);text-transform:uppercase;}
+.nav-btn{
+  background:var(--wa);color:#fff;text-decoration:none;
+  padding:11px 28px;border-radius:2px;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  transition:background .2s;
+}
+.nav-btn:hover{background:var(--wa-dark);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  padding-top:70px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:linear-gradient(130deg, var(--white) 0%, var(--sand) 55%, var(--pale) 100%);
+  overflow:hidden;
+  position:relative;
+}
+.hero-text{
+  padding:70px 48px 60px 72px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:2;
+}
+.badge{
+  display:inline-block;
+  background:var(--pale);color:var(--gold);
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  padding:8px 18px;border-radius:2px;border-left:3px solid var(--gold);
+  margin-bottom:28px;width:fit-content;
+}
+.hero-text h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,4vw,58px);
+  font-weight:700;line-height:1.12;
+  color:var(--dark);margin-bottom:22px;
+}
+.hero-text h1 em{font-style:italic;color:var(--gold);}
+.hero-text p{
+  font-size:17px;font-weight:300;color:var(--gray);
+  line-height:1.82;margin-bottom:40px;max-width:420px;
+}
+.btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-gold{
+  background:var(--wa);color:#fff;text-decoration:none;
+  padding:16px 34px;border-radius:2px;
+  font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:10px;
+  transition:all .25s;
+}
+.btn-gold:hover{background:var(--wa-dark);transform:translateY(-2px);}
+.btn-outline{
+  border:1.5px solid var(--gold);color:var(--gold);text-decoration:none;
+  padding:16px 34px;border-radius:2px;
+  font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  transition:all .25s;
+}
+.btn-outline:hover{background:var(--pale);}
+
+/* hero photo */
+.hero-photo-col{
+  position:relative;
+  display:flex;align-items:flex-end;justify-content:center;
+  overflow:hidden;
+}
+.hero-img-wrap{
+  position:relative;
+  width:100%;height:100%;
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.hero-img-wrap::before{
+  content:'';
+  position:absolute;
+  bottom:0;right:0;
+  width:72%;height:88%;
+  background:var(--pale);
+  border-radius:120px 0 0 0;
+  z-index:0;
+}
+.hero-img{
+  position:relative;z-index:1;
+  background:var(--pale);
+  width:88%;
+  height:92vh;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:100px 0 0 0;
+  display:block;
+}
+
+/* ── STATS ── */
+.stats{
+  background:var(--pale);
+  padding:38px 72px;
+  display:flex;justify-content:space-around;align-items:center;
+  flex-wrap:wrap;gap:16px;
+  border-top:1px solid rgba(184,146,42,0.2);
+  border-bottom:1px solid rgba(184,146,42,0.2);
+}
+.stat{text-align:center;}
+.stat-n{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--gold);line-height:1;}
+.stat-l{font-size:10px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);margin-top:5px;}
+.stat-sep{width:1px;height:46px;background:rgba(184,146,42,0.2);}
+
+/* ── ABOUT ── */
+.about{
+  padding:100px 72px;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  background:var(--white);
+}
+.about-img-side{position:relative;display:flex;justify-content:center;}
+.about-img-frame{
+  position:relative;width:100%;max-width:400px;
+}
+.about-img-frame::before{
+  content:'';position:absolute;
+  top:-16px;left:-16px;right:16px;bottom:16px;
+  border:2px solid var(--pale);border-radius:4px;z-index:0;
+}
+.about-img{
+  width:100%;display:block;position:relative;z-index:1;
+  background:var(--white);
+  border-radius:4px;
+  object-fit:cover;object-position:center top;
+  aspect-ratio:3/4;
+}
+
+.lbl{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:13px;}
+.about-txt h2{font-family:'Playfair Display',serif;font-size:clamp(26px,2.8vw,40px);font-weight:700;line-height:1.2;margin-bottom:16px;color:var(--dark);}
+.about-txt p{font-size:15px;font-weight:300;color:var(--gray);line-height:1.88;margin-bottom:16px;}
+.chklist{list-style:none;margin-top:18px;}
+.chklist li{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--dark);padding:9px 0;border-bottom:1px solid rgba(184,146,42,0.11);}
+.chklist li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+/* ── SERVICES ── */
+.services{padding:96px 72px;background:var(--cream);}
+.sec-head{text-align:center;margin-bottom:52px;}
+.sec-head h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,42px);font-weight:700;color:var(--dark);margin-bottom:12px;}
+.sec-head p{font-size:16px;color:var(--gray);max-width:520px;margin:0 auto;font-weight:300;line-height:1.8;}
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:1060px;margin:0 auto;}
+.srv-card{
+  background:var(--white);border-radius:6px;padding:34px 26px;
+  text-align:center;border:1px solid rgba(184,146,42,0.1);
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.srv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s;}
+.srv-card:hover{transform:translateY(-5px);box-shadow:0 14px 42px rgba(184,146,42,0.1);border-color:rgba(184,146,42,0.2);}
+.srv-card:hover::after{transform:scaleX(1);}
+.srv-ico{width:58px;height:58px;background:var(--pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.srv-ico svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.srv-card h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--dark);margin-bottom:10px;}
+.srv-card p{font-size:13px;color:var(--gray);line-height:1.75;font-weight:300;}
+
+/* ── YES/NO ── */
+.yesno{padding:96px 72px;background:var(--sand);}
+.yn-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:1040px;margin:0 auto;}
+.yn-box{border-radius:8px;padding:46px 38px;}
+.yn-yes{background:var(--white);border:1.5px solid rgba(184,146,42,0.18);}
+.yn-no{background:var(--beige);border:1.5px solid rgba(184,146,42,0.14);}
+.yn-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 15px;border-radius:2px;margin-bottom:22px;background:var(--pale);color:var(--gold);}
+.yn-box h3{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;margin-bottom:24px;color:var(--dark);line-height:1.25;}
+.yn-list{list-style:none;}
+.yn-list li{display:flex;align-items:flex-start;gap:12px;padding:10px 0;font-size:14px;line-height:1.6;color:var(--gray);border-bottom:1px solid rgba(184,146,42,0.1);}
+.yn-list li:last-child{border-bottom:none;}
+.yn-ck{width:20px;height:20px;border-radius:50%;background:var(--pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.yn-ck svg{width:10px;height:10px;stroke:var(--gold);fill:none;stroke-width:2.5;stroke-linecap:round;}
+.yn-cta{margin-top:30px;display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:3px;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;background:var(--wa);color:#fff;transition:all .25s;}
+.yn-cta:hover{background:var(--wa-dark);transform:translateY(-2px);}
+
+/* ── PHOTO BREAK ── */
+.photobreak{
+  padding:0;
+  background:var(--beige);
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:stretch;
+  min-height:520px;
+}
+.pb-text{
+  padding:80px 56px 80px 72px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.pb-text h2{font-family:'Playfair Display',serif;font-size:clamp(24px,2.6vw,38px);font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:16px;}
+.pb-text p{font-size:15px;color:var(--gray);line-height:1.85;font-weight:300;margin-bottom:24px;}
+.pb-img-col{
+  position:relative;
+  overflow:hidden;
+  min-height:480px;
+}
+.pb-img{
+  width:100%;height:100%;
+  background:var(--beige);
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+
+/* ── ATENDIMENTO BRASIL ── */
+.brasil-atendimento{
+  padding:96px 72px;
+  background:linear-gradient(135deg, var(--cream) 0%, var(--beige) 100%);
+  overflow:hidden;
+}
+.brasil-grid{
+  max-width:1060px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;
+  align-items:center;
+}
+.brasil-map-wrap{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.brasil-map-wrap::before{
+  content:'';
+  position:absolute;
+  width:78%;
+  height:78%;
+  border-radius:50%;
+  background:rgba(245,237,216,.78);
+  filter:blur(18px);
+  z-index:0;
+}
+.brasil-map{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:500px;
+  display:block;
+  filter:drop-shadow(0 22px 32px rgba(116,91,39,.14));
+}
+.brasil-text .lbl{margin-bottom:14px;}
+.brasil-text h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(26px,3vw,42px);
+  line-height:1.2;
+  color:var(--dark);
+  margin-bottom:16px;
+}
+.brasil-text p{
+  font-size:15px;
+  color:var(--gray);
+  line-height:1.85;
+  font-weight:300;
+  margin-bottom:22px;
+}
+.brasil-points{list-style:none;margin:24px 0 0;}
+.brasil-points li{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--dark);padding:9px 0;border-bottom:1px solid rgba(184,146,42,0.12);}
+.brasil-points li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+/* ── PROCESS ── */
+.process{padding:96px 72px;background:var(--white);}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:920px;margin:0 auto;position:relative;}
+.proc-steps::before{content:'';position:absolute;top:30px;left:13%;right:13%;height:1px;background:var(--pale);z-index:0;}
+.proc-step{text-align:center;padding:0 12px;position:relative;z-index:1;}
+.proc-n{width:60px;height:60px;border-radius:50%;background:var(--pale);color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;border:2px solid var(--white);box-shadow:0 4px 12px rgba(184,146,42,0.15);}
+.proc-step h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--dark);margin-bottom:7px;}
+.proc-step p{font-size:12px;color:var(--gray);line-height:1.7;}
+
+/* ── TESTIMONIALS ── */
+.testis{padding:96px 72px;background:var(--cream);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;max-width:1060px;margin:0 auto;}
+.testi-card{background:var(--white);border-radius:8px;padding:30px 26px;border-left:4px solid var(--gold);position:relative;}
+.testi-card::before{content:'"';font-family:'Playfair Display',serif;font-size:72px;color:var(--pale);position:absolute;top:6px;left:16px;line-height:1;}
+.testi-txt{font-size:14px;color:var(--gray);line-height:1.82;font-style:italic;margin-bottom:20px;padding-top:16px;}
+.testi-who{display:flex;align-items:center;gap:11px;}
+.testi-av{width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex-shrink:0;}
+.testi-name{font-weight:700;font-size:13px;color:var(--dark);}
+.testi-det{font-size:11px;color:var(--gray);margin-top:1px;}
+.stars{color:var(--gold);font-size:12px;letter-spacing:2px;margin-bottom:4px;}
+
+/* ── FAQ ── */
+.faq{padding:96px 72px;background:var(--sand);}
+.faq-inner{max-width:780px;margin:0 auto;}
+.faq-item{border-bottom:1px solid rgba(184,146,42,0.18);}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-family:'Lato',sans-serif;font-size:15px;font-weight:700;color:var(--dark);gap:16px;}
+.faq-arr{width:22px;height:22px;border-radius:50%;background:var(--pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s;}
+.faq-q.open .faq-arr{transform:rotate(180deg);background:var(--gold);}
+.faq-q.open .faq-arr svg{stroke:#fff;}
+.faq-a{max-height:0;overflow:hidden;padding:0;font-size:14px;color:var(--gray);line-height:1.82;font-weight:300;transition:all 0.3s ease-out;}
+.faq-a.show{max-height:300px;padding:0 0 20px;}
+
+/* ── CTA FINAL ── */
+.cta{padding:96px 72px;background:var(--pale);text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;border-radius:50%;border:1px solid rgba(184,146,42,0.14);pointer-events:none;}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,46px);font-weight:700;color:var(--dark);margin-bottom:16px;position:relative;z-index:2;}
+.cta h2 em{color:var(--gold);font-style:italic;}
+.cta p{font-size:16px;color:var(--gray);font-weight:300;max-width:480px;margin:0 auto 42px;line-height:1.8;position:relative;z-index:2;}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;background:var(--wa);color:#fff;text-decoration:none;padding:18px 48px;border-radius:3px;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s;position:relative;z-index:2;}
+.cta-btn:hover{background:var(--wa-dark);transform:translateY(-3px);box-shadow:0 10px 36px rgba(37,211,102,0.28);}
+
+/* ── FOOTER ── */
+footer{background:var(--cream);padding:44px 72px 26px;border-top:1px solid rgba(184,146,42,0.16);}
+.ft-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;margin-bottom:26px;}
+.ft-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);}
+.ft-logo small{display:block;font-family:'Lato',sans-serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:300;margin-top:3px;}
+.ft-links{display:flex;gap:26px;flex-wrap:wrap;}
+.ft-links a{color:var(--gray);text-decoration:none;font-size:13px;transition:color .2s;}
+.ft-links a:hover{color:var(--gold);}
+.ft-bottom{border-top:1px solid rgba(184,146,42,0.1);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.ft-bottom p{font-size:11px;color:var(--gray);}
+
+/* ── FLOATING WA ── */
+.wa{position:fixed;bottom:28px;right:28px;z-index:999;text-decoration:none;}
+.wa-btn{width:60px;height:60px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;animation:pulse 2s infinite;transition:transform .2s;}
+.wa-btn:hover{transform:scale(1.1);}
+.wa-btn svg{width:30px;height:30px;fill:#fff;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.65);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  nav{padding:8px 22px;}
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-text{padding:80px 24px 0;text-align:center;}
+  .hero-text p{max-width:100%;}
+  .btns{justify-content:center;}
+  .hero-photo-col{height:70vw;max-height:400px;}
+  .hero-img{width:100%;height:100%;border-radius:0;}
+  .hero-img-wrap::before{display:none;}
+  .stats{padding:30px 22px;}
+  .stat-sep{display:none;}
+  .about{grid-template-columns:1fr;padding:60px 24px;gap:36px;}
+  .services{padding:60px 24px;}
+  .yesno{padding:60px 24px;}
+  .yn-grid{grid-template-columns:1fr;}
+  .photobreak{grid-template-columns:1fr;}
+  .pb-img-col{min-height:320px;}
+  .pb-text{padding:56px 24px;}
+
+  .brasil-atendimento{padding:60px 24px;}
+  .brasil-grid{grid-template-columns:1fr;gap:34px;text-align:center;}
+  .brasil-points li{justify-content:flex-start;text-align:left;}
+  .process{padding:60px 24px;}
+  .proc-steps{grid-template-columns:repeat(2,1fr);gap:24px;}
+  .proc-steps::before{display:none;}
+  .testis{padding:60px 24px;}
+  .faq{padding:60px 24px;}
+  .cta{padding:60px 24px;}
+  footer{padding:36px 24px 20px;}
+  .ft-top{flex-direction:column;text-align:center;}
+  .ft-bottom{justify-content:center;text-align:center;}
+  .wa{bottom:18px;right:18px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <img src="assets/logo-ana-malheiros-transparente.png" alt="Ana Malheiros Advocacia" style="height:78px;width:auto;display:block;">
+  </a>
+  <a href="https://wa.me/5531982629434" target="_blank" class="nav-btn">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Consulta Gratuita
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="badge">⚖ Especialista em Divórcio</div>
+    <h1>Seu recomeço <em>merece</em><br>o melhor suporte jurídico</h1>
+    <p>Advocacia humanizada, com escuta atenta e estratégia precisa. Cuido do seu caso com toda a seriedade e discrição que você merece.</p>
+    <div class="btns">
+      <a href="https://wa.me/5531982629434" target="_blank" class="btn-gold">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar com a Dra. Ana
+      </a>
+      <a href="#servicos" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+  <div class="hero-photo-col">
+    <div class="hero-img-wrap">
+      <img src="assets/ana-malheiros-hero-sofa.png" alt="Dra. Ana Malheiros" class="hero-img">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Anos de Experiência</div></div>
+  <div class="stat-sep"></div>
+  <div class="stat"><div class="stat-n">500+</div><div class="stat-l">Casos Resolvidos</div></div>
+  <div class="stat-sep"></div>
+  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Foco no Cliente</div></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="sobre">
+  <div class="about-img-side">
+    <div class="about-img-frame">
+      <img src="assets/ana-malheiros-about-marrom.png" alt="Dra. Ana Malheiros" class="about-img">
+    </div>
+  </div>
+  <div class="about-txt">
+    <span class="lbl">Sobre a Dra. Ana Malheiros</span>
+    <h2>Compromisso com a sua tranquilidade e seus direitos</h2>
+    <p>Especialista em Direito de Família, com foco em divórcios e partilha de bens. Minha missão é oferecer um atendimento humanizado, entendendo que por trás de cada processo existe uma história e uma vida que busca um novo começo.</p>
+    <p>Atuamos de forma estratégica para garantir que seus direitos sejam preservados, priorizando sempre a resolução mais ágil e menos desgastante para você e sua família.</p>
+    <ul class="chklist">
+      <li>Atendimento personalizado e discreto</li>
+      <li>Especialista em Divórcio Consensual e Litigioso</li>
+      <li>Vasta experiência em Partilha de Bens complexa</li>
+      <li>Suporte jurídico em Guarda e Pensão Alimentícia</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicos">
+  <div class="sec-head">
+    <span class="lbl">Nossas Especialidades</span>
+    <h2>Como podemos te ajudar</h2>
+    <p>Oferecemos suporte jurídico completo em todas as questões relacionadas ao Direito de Família.</p>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card">
+      <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Divórcio</h3>
+      <p>Consensual ou litigioso, judicial ou em cartório. Orientação completa para um processo seguro.</p>
+    </div>
+    <div class="srv-card">
+      <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <h3>Partilha de Bens</h3>
+      <p>Análise detalhada do patrimônio para garantir uma divisão justa e conforme a lei.</p>
+    </div>
+    <div class="srv-card">
+      <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Guarda e Pensão</h3>
+      <p>Proteção dos interesses dos filhos, definindo guarda, visitas e valores de pensão.</p>
+    </div>
+    <div class="srv-card">
+      <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+      <h3>União Estável</h3>
+      <p>Reconhecimento e dissolução de união estável, com todos os reflexos patrimoniais.</p>
+    </div>
+  </div>
+</section>
+
+<!-- YES/NO -->
+<section class="yesno">
+  <div class="yn-grid">
+    <div class="yn-box yn-yes">
+      <div class="yn-tag">✓ Por que nos escolher</div>
+      <h3>Segurança e Agilidade</h3>
+      <ul class="yn-list">
+        <li><div class="yn-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Atendimento 100% focado no seu caso</li>
+        <li><div class="yn-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Estratégias para acelerar o processo</li>
+        <li><div class="yn-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Transparência total em cada etapa</li>
+        <li><div class="yn-ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Especialista com 10 anos de experiência</li>
+      </ul>
+      <a href="https://wa.me/5531982629434" target="_blank" class="yn-cta">Falar com Especialista</a>
+    </div>
+    <div class="yn-box yn-no">
+      <div class="yn-tag">! Evite Riscos</div>
+      <h3>Não corra perigos</h3>
+      <ul class="yn-list">
+        <li><div class="yn-ck"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div> Perda de direitos patrimoniais</li>
+        <li><div class="yn-ck"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div> Processos que se arrastam por anos</li>
+        <li><div class="yn-ck"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div> Desgaste emocional desnecessário</li>
+        <li><div class="yn-ck"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div> Falta de suporte e comunicação</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK -->
+<section class="photobreak">
+  <div class="pb-text">
+    <h2>Justiça com empatia e <em>seriedade</em></h2>
+    <p>Entendemos que o divórcio é um momento de transição delicado. Por isso, nosso trabalho vai além do jurídico: oferecemos o suporte necessário para que você se sinta segura e amparada durante todo o caminho.</p>
+    <a href="https://wa.me/5531982629434" target="_blank" class="btn-gold">Agendar Consulta</a>
+  </div>
+  <div class="pb-img-col">
+    <img src="assets/ana-malheiros-about-marrom.png" alt="Atendimento Dra. Ana" class="pb-img">
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="como-funciona">
+  <div class="sec-head">
+    <span class="lbl">Passo a Passo</span>
+    <h2>Como funciona nosso atendimento</h2>
+  </div>
+  <div class="proc-steps">
+    <div class="proc-step"><div class="proc-n">1</div><h4>Consulta Inicial</h4><p>Primeira conversa para entender seu caso e traçar as melhores estratégias.</p></div>
+    <div class="proc-step"><div class="proc-n">2</div><h4>Análise e Estratégia</h4><p>Estudo detalhado da situação e elaboração do plano jurídico mais adequado.</p></div>
+    <div class="proc-step"><div class="proc-n">3</div><h4>Acompanhamento</h4><p>Atuação ativa em todas as etapas, com comunicação clara e constante.</p></div>
+    <div class="proc-step"><div class="proc-n">4</div><h4>Resolução</h4><p>Conclusão do processo com os melhores resultados e suporte no seu recomeço.</p></div>
+  </div>
+</section>
+
+
+<!-- ATENDIMENTO BRASIL -->
+<section class="brasil-atendimento" id="atendimento-brasil">
+  <div class="brasil-grid">
+    <div class="brasil-map-wrap">
+      <img src="assets/mapa-brasil-bege.png" alt="Mapa do Brasil em bege representando atendimento online em todo o Brasil" class="brasil-map">
+    </div>
+    <div class="brasil-text">
+      <span class="lbl">Atendimento em todo o Brasil</span>
+      <h2>Suporte jurídico online, seguro e humanizado onde você estiver</h2>
+      <p>Realizamos atendimentos por videochamada e acompanhamos cada etapa com clareza, discrição e estratégia, permitindo que você receba orientação especializada sem precisar se deslocar.</p>
+      <ul class="brasil-points">
+        <li>Atendimento remoto para clientes de qualquer estado</li>
+        <li>Comunicação clara por WhatsApp e videochamada</li>
+        <li>Condução digital com a mesma seriedade do presencial</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testis">
+  <div class="sec-head">
+    <span class="lbl">Depoimentos</span>
+    <h2>O que dizem nossos clientes</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-txt">A Dra. Ana foi fundamental no meu processo de divórcio. Explicou cada passo com clareza e sempre esteve disponível. Senti segurança do início ao fim.</p><div class="testi-who"><div class="testi-av">M</div><div><div class="testi-name">Mariana S.</div><div class="testi-det">Divórcio consensual · BH/MG</div></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-txt">Estava desesperada com a situação da pensão dos meus filhos. A Ana resolveu em tempo recorde, com muita competência e empatia. Profissional incrível!</p><div class="testi-who"><div class="testi-av">C</div><div><div class="testi-name">Carla R.</div><div class="testi-det">Execução de pensão · Contagem/MG</div></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-txt">Meu caso de guarda era muito delicado. A Dra. Ana cuidou de tudo com sensibilidade, sempre pensando no bem estar dos meus filhos. Resultado melhor do que eu esperava.</p><div class="testi-who"><div class="testi-av">R</div><div><div class="testi-name">Roberto M.</div><div class="testi-det">Guarda compartilhada · Betim/MG</div></div></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="sec-head" style="text-align:left;margin-bottom:40px;"><span class="lbl">Dúvidas Frequentes</span><h2>Perguntas frequentes</h2></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">Quanto tempo demora um processo de divórcio?<span class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B8922A" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="faq-a">O divórcio consensual em cartório pode ser concluído em poucas semanas. O divórcio judicial pode levar de 2 meses a mais de 1 ano dependendo da complexidade. Na consulta inicial, damos uma estimativa realista para o seu caso.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">É possível fazer o divórcio sem ir ao fórum?<span class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B8922A" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="faq-a">Sim! Se o casal não tem filhos menores e o divórcio for consensual, é possível realizá-lo em cartório, de forma muito mais rápida. Também atendemos online em todo o Brasil.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">Como funciona a partilha de bens?<span class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B8922A" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="faq-a">Depende do regime de bens do casamento. No regime mais comum (comunhão parcial), são partilhados os bens adquiridos durante o casamento. Fazemos um levantamento completo e orientamos sobre a divisão mais justa para você.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">Meu ex não quer assinar o divórcio. O que fazer?<span class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B8922A" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="faq-a">O divórcio é um direito garantido pela Constituição — ninguém pode ser impedido de se divorciar. O processo ocorre mesmo sem o consentimento do cônjuge, pela via judicial litigiosa.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faq(this)">O atendimento é apenas presencial?<span class="faq-arr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B8922A" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></span></button><div class="faq-a">Não! Atendemos clientes de todo o Brasil de forma online, por videochamada. Todo o processo pode ser conduzido remotamente com a mesma qualidade do atendimento presencial.</div></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta" id="consulta">
+  <h2>Pronta para dar o <em>próximo passo?</em></h2>
+  <p>Uma consulta inicial pode mudar a direção de tudo. Fale agora com a Dra. Ana Malheiros pelo WhatsApp.</p>
+  <a href="https://wa.me/5531982629434" target="_blank" class="cta-btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Falar pelo WhatsApp Agora
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-logo">Ana Malheiros<small>Advocacia</small></div>
+    <div class="ft-links">
+      <a href="#sobre">Sobre</a><a href="#servicos">Serviços</a>
+      <a href="#consulta">Consulta</a><a href="#como-funciona">Como Funciona</a>
+      <a href="https://wa.me/5531982629434" target="_blank">Contato</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Ana Malheiros Advocacia. Todos os direitos reservados.</p>
+    <p>OAB/MG · Direito de Família e Sucessões</p>
+  </div>
+</footer>
+
+<!-- WA FLUTUANTE -->
+<a href="https://wa.me/5531982629434" target="_blank" class="wa" title="Falar pelo WhatsApp">
+  <div class="wa-btn">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+</a>
+
+<script>
+function faq(btn){
+  const a = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  
+  // Fecha todos os outros
+  document.querySelectorAll('.faq-q').forEach(b => {
+    if (b !== btn) {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('show');
+    }
+  });
+  
+  // Alterna o atual
+  if(isOpen){
+    btn.classList.remove('open');
+    a.classList.remove('show');
+  } else {
+    btn.classList.add('open');
+    a.classList.add('show');
+  }
+}
+</script>
+</body>
+</html>
