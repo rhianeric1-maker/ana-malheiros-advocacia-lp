@@ -117,11 +117,11 @@ nav{
 }
 .hero-img{
   position:relative;z-index:1;
-  background:var(--pale);
+  background:transparent;
   width:88%;
   height:92vh;
-  object-fit:cover;
-  object-position:center top;
+  object-fit:contain;
+  object-position:center bottom;
   border-radius:100px 0 0 0;
   display:block;
 }
@@ -227,8 +227,8 @@ nav{
 .pb-img{
   width:100%;height:100%;
   background:var(--beige);
-  object-fit:cover;
-  object-position:center top;
+  object-fit:contain;
+  object-position:center bottom;
   display:block;
 }
 
@@ -356,8 +356,9 @@ footer{background:var(--cream);padding:44px 72px 26px;border-top:1px solid rgba(
   .hero-text{padding:80px 24px 0;text-align:center;}
   .hero-text p{max-width:100%;}
   .btns{justify-content:center;}
-  .hero-photo-col{height:70vw;max-height:400px;}
-  .hero-img{width:100%;height:100%;border-radius:0;}
+  .hero-photo-col{height:auto;max-height:none;overflow:visible;background:var(--pale);padding:18px 0 0;}
+  .hero-img-wrap{height:auto;align-items:center;justify-content:center;}
+  .hero-img{width:92%;max-width:420px;height:auto;object-fit:contain;object-position:center bottom;border-radius:0;background:transparent;margin:0 auto;}
   .hero-img-wrap::before{display:none;}
   .stats{padding:30px 22px;}
   .stat-sep{display:none;}
@@ -414,7 +415,7 @@ footer{background:var(--cream);padding:44px 72px 26px;border-top:1px solid rgba(
   </div>
   <div class="hero-photo-col">
     <div class="hero-img-wrap">
-      <img src="assets/ana-malheiros-hero-sofa.png" alt="Dra. Ana Malheiros" class="hero-img">
+      <img src="assets/ana-malheiros-hero-sofa-transparent.png" alt="Dra. Ana Malheiros" class="hero-img">
     </div>
   </div>
 </section>
